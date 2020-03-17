@@ -14,204 +14,690 @@ const GREEN = 'rgba(141,196,63,1)';
 const PURPLE = 'rgba(108,48,237,1)';
 
 const survey = [
-  {
-    questionType: 'Info',
-    questionText:
-      'Welcome2 to the React Native Simple Survey Example app! Tap next to continue',
-  },
-  {
+  /* {
     questionType: 'TextInput',
     questionText:
-      'Simple Survey supports free form text input.\n\nWhat is your favorite color?',
-    questionId: 'favoriteColor',
-    placeholderText: 'Tell me your favorite color!',
-  },
-  {
-    questionType: 'NumericInput',
-    questionText:
-      'It also supports numeric input. Enter your favorite number here!',
-    questionId: 'favoriteNumber',
-    placeholderText: '42',
-  },
-  {
-    questionType: 'NumericInput',
-    questionText:
-      'New to 3.0, default values!\n\nHow many balls can you juggle at once?',
-    questionId: 'jugglingBalls',
-    defaultValue: '0',
-  },
+      'Location of your house or the place from where you are using this app?',
+    questionId: 'location',
+    placeholderText: '',
+  },*/
   {
     questionType: 'SelectionGroup',
     questionText:
-      'Naturally Simple Survey also has multiple choice questions. By default they acts like checkboxes, answers can be selected and deselected.\n\nWhat is your favorite pet?',
-    questionId: 'favoritePet',
-    options: [
-      {
-        optionText: 'Dogs',
-        value: 'dog',
-      },
-      {
-        optionText: 'Cats',
-        value: 'cat',
-      },
-      {
-        optionText: 'Ferrets',
-        value: 'ferret',
-      },
-      {
-        optionText: 'Snakes',
-        value: 'snake',
-      },
-      {
-        optionText: 'Guinea pigs',
-        value: 'guinea',
-      },
-    ],
-  },
-  {
-    questionType: 'MultipleSelectionGroup',
-    questionText: 'Select two or three of your favorite foods!',
-    questionId: 'favoriteFoods',
-    questionSettings: {
-      maxMultiSelect: 3,
-      minMultiSelect: 2,
-    },
-    options: [
-      {
-        optionText: 'Sticky rice dumplings',
-        value: 'sticky rice dumplings',
-      },
-      {
-        optionText: 'Pad Thai',
-        value: 'pad thai',
-      },
-      {
-        optionText: 'Steak and Eggs',
-        value: 'steak and eggs',
-      },
-      {
-        optionText: 'Tofu',
-        value: 'tofu',
-      },
-      {
-        optionText: 'Ice cream!',
-        value: 'ice cream',
-      },
-      {
-        optionText: 'Injera',
-        value: 'injera',
-      },
-      {
-        optionText: 'Biryani',
-        value: 'biryani',
-      },
-      {
-        optionText: 'Tamales',
-        value: 'tamales',
-      },
-    ],
-  },
-  {
-    questionType: 'MultipleSelectionGroup',
-    questionText:
-      'Simple Survey can auto advance after a question has been answered. Select two things you do to relax:',
-    questionId: 'relax',
-    questionSettings: {
-      maxMultiSelect: 2,
-      minMultiSelect: 2,
-      autoAdvance: true,
-    },
-    options: [
-      {
-        optionText: 'Reading a good book',
-        value: 'reading',
-      },
-      {
-        optionText: 'Going on vacation',
-        value: 'vacations',
-      },
-      {
-        optionText: 'Eating meals with family',
-        value: 'meals',
-      },
-      {
-        optionText: 'Heading to the ocean',
-        value: 'ocean',
-      },
-    ],
-  },
-  {
-    questionType: 'SelectionGroup',
-    questionText:
-      'Simple Survey can also simulate radio button behavior. Pick from below: ',
-    questionId: 'radio',
+      'Location of your house or the place from where you are using this app?',
+    questionId: 'location',
     questionSettings: {
       allowDeselect: false,
     },
     options: [
       {
-        optionText: 'I was forced to pick option 1',
-        value: 'option 1',
+        optionText: 'China (mainland)',
+        value: '2',
       },
       {
-        optionText: 'I have to pick option 2',
-        value: 'option 2',
+        optionText: 'Italy',
+        value: '2',
       },
       {
-        optionText: 'I guess option 3',
-        value: 'option 3',
+        optionText: 'Iran',
+        value: '2',
+      },
+      {
+        optionText: 'South Korea',
+        value: '2',
+      },
+      {
+        optionText: 'France',
+        value: '2',
+      },
+      {
+        optionText: 'Spain',
+        value: '2',
+      },
+      {
+        optionText: 'Germany',
+        value: '2',
+      },
+      {
+        optionText: 'United States',
+        value: '2',
+      },
+      {
+        optionText: 'Diamond Princess',
+        value: '2',
+      },
+      {
+        optionText: 'Japan',
+        value: '2',
+      },
+      {
+        optionText: 'Switzerland',
+        value: '2',
+      },
+      {
+        optionText: 'Netherlands',
+        value: '2',
+      },
+      {
+        optionText: 'United Kingdom',
+        value: '2',
+      },
+      {
+        optionText: 'Sweden',
+        value: '2',
+      },
+      {
+        optionText: 'Norway',
+        value: '2',
+      },
+      {
+        optionText: 'Belgium',
+        value: '2',
+      },
+      {
+        optionText: 'Denmark',
+        value: '2',
+      },
+      {
+        optionText: 'Austria',
+        value: '2',
+      },
+      {
+        optionText: 'Singapore',
+        value: '1',
+      },
+      {
+        optionText: 'Malaysia',
+        value: '1',
+      },
+      {
+        optionText: 'Hong Kong',
+        value: '1',
+      },
+      {
+        optionText: 'Bahrain',
+        value: '1',
+      },
+      {
+        optionText: 'Australia',
+        value: '1',
+      },
+      {
+        optionText: 'Greece',
+        value: '1',
+      },
+      {
+        optionText: 'Canada',
+        value: '1',
+      },
+      {
+        optionText: 'Iceland',
+        value: '1',
+      },
+      {
+        optionText: 'Other countries',
+        value: '0',
       },
     ],
   },
   {
     questionType: 'SelectionGroup',
-    questionText: 'Simple Survey also supports default selections: ',
-    questionId: 'singleDefault',
+    questionText: 'Gender                                         ',
+    questionId: 'gender',
     questionSettings: {
-      defaultSelection: 0,
+      allowDeselect: false,
     },
     options: [
       {
-        optionText: 'This is the default option',
-        value: 'default',
+        optionText: 'Male',
+        value: '1',
       },
       {
-        optionText: 'This is the alternative option',
-        value: 'alternative',
+        optionText: 'Female',
+        value: '0',
+      },
+      {
+        optionText: 'Others',
+        value: '0',
       },
     ],
   },
   {
-    questionType: 'MultipleSelectionGroup',
-    questionText: 'And of course it supports multiple defaults: ',
-    questionId: 'multipleDefaults',
+    questionType: 'NumericInput',
+    questionText: 'Age                                        ',
+    questionId: 'age',
+    placeholderText: 'Ex: 42',
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Race                                 ',
+    questionId: 'race',
     questionSettings: {
-      defaultSelection: [0, 2],
-      maxMultiSelect: 2,
-      minMultiSelect: 2,
+      allowDeselect: false,
     },
     options: [
       {
-        optionText: 'This is the first default option',
-        value: 'first default',
+        optionText: 'White',
+        value: '1',
       },
       {
-        optionText: 'This is the first alternate option',
-        value: 'first alternative',
+        optionText: 'Black',
+        value: '0',
       },
       {
-        optionText: 'This is the second default option',
-        value: 'second default',
+        optionText: 'China',
+        value: '1',
       },
       {
-        optionText: 'This is the second alternate option',
-        value: 'second alternative',
+        optionText: 'Others',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText:
+      'Have you travelled or living in any of the COVID-19  the affected areas or countries in last three weeks or 21 days?',
+    questionId: 'travelledRecently',
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'China (mainland)',
+        value: '2',
+      },
+      {
+        optionText: 'Italy',
+        value: '2',
+      },
+      {
+        optionText: 'Iran',
+        value: '2',
+      },
+      {
+        optionText: 'South Korea',
+        value: '2',
+      },
+      {
+        optionText: 'France',
+        value: '2',
+      },
+      {
+        optionText: 'Spain',
+        value: '2',
+      },
+      {
+        optionText: 'Germany',
+        value: '2',
+      },
+      {
+        optionText: 'United States',
+        value: '2',
+      },
+      {
+        optionText: 'Diamond Princess',
+        value: '2',
+      },
+      {
+        optionText: 'Japan',
+        value: '2',
+      },
+      {
+        optionText: 'Switzerland',
+        value: '2',
+      },
+      {
+        optionText: 'Netherlands',
+        value: '2',
+      },
+      {
+        optionText: 'United Kingdom',
+        value: '2',
+      },
+      {
+        optionText: 'Sweden',
+        value: '2',
+      },
+      {
+        optionText: 'Norway',
+        value: '2',
+      },
+      {
+        optionText: 'Belgium',
+        value: '2',
+      },
+      {
+        optionText: 'Denmark',
+        value: '2',
+      },
+      {
+        optionText: 'Austria',
+        value: '2',
+      },
+      {
+        optionText: 'Singapore',
+        value: '1',
+      },
+      {
+        optionText: 'Malaysia',
+        value: '1',
+      },
+      {
+        optionText: 'Hong Kong',
+        value: '1',
+      },
+      {
+        optionText: 'Bahrain',
+        value: '1',
+      },
+      {
+        optionText: 'Australia',
+        value: '1',
+      },
+      {
+        optionText: 'Greece',
+        value: '1',
+      },
+      {
+        optionText: 'Canada',
+        value: '1',
+      },
+      {
+        optionText: 'Iceland',
+        value: '1',
+      },
+      {
+        optionText: 'Other countries',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText:
+      'Have you had any close contact with a person who is known to have COVID-19 during the last 21 days?',
+    questionId: 'closeContactIn21Days',
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have fever?                    ',
+    questionId: 'fever',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Duration of fever in days',
+    questionId: 'durationOfFever',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have Cough?                    ',
+    questionId: 'cough',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Duration of Cough in days',
+    questionId: 'durationOfCough',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have Shortness of breath ?                    ',
+    questionId: 'breath',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Duration of Shortness of breath in days',
+    questionId: 'durationOfBreath',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you feel fatigue or muscle pain?                ',
+    questionId: 'fatigue',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'The duration of fatigue or muscle pain in days',
+    questionId: 'durationOfFatigue',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have suptum problem i.e sputum production          ',
+    questionId: 'suptum',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'The duration of sputum production in days',
+    questionId: 'durationOfSuptum',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you feel Headache?                ',
+    questionId: 'headache',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'The duration of Headache in days',
+    questionId: 'durationOfHeadache',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have diarrhea?               ',
+    questionId: 'diarrhea',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'The duration of diarrhea in days',
+    questionId: 'durationOfDiarrhea',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you have pneumonia in lungs?                ',
+    questionId: 'pneumonia',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'The duration of pneumonia in days',
+    questionId: 'durationOfPneumonia',
+    followUpQuestion: true,
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Less than 3 days',
+        value: '0',
+      },
+      {
+        optionText: 'More than 3 days',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText:
+      'Do you have any diseases like hypertension, diabetes, Chronic obstructive lung disease and Coronary heart disease?',
+    questionId: 'anyOtherDisease',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Are you able to do any Physical work?      ',
+    questionId: 'phyWork',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Can you focus on the work or task?          ',
+    questionId: 'focus',
+
+    questionSettings: {
+      allowDeselect: false,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '1',
+      },
+      {
+        optionText: 'No',
+        value: '0',
       },
     ],
   },
   {
     questionType: 'Info',
-    questionText: 'That is all for the demo, tap finish to see your results!',
+    questionText: 'That is all for the Survey, tap finish to see your results!',
   },
 ];
 
@@ -444,11 +930,6 @@ export default class SurveyScreen extends Component {
             renderInfo={this.renderInfoText}
           />
         </View>
-
-        <ScrollView style={styles.answersContainer}>
-          <Text style={{textAlign: 'center'}}>JSON output</Text>
-          <Text>{this.state.answersSoFar}</Text>
-        </ScrollView>
       </View>
     );
   }
@@ -457,10 +938,11 @@ export default class SurveyScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     minWidth: '70%',
+    marginTop: 7,
     maxWidth: '90%',
     alignItems: 'stretch',
     justifyContent: 'center',
-
+    marginBottom: 30,
     elevation: 20,
     borderRadius: 10,
     flex: 1,
@@ -487,6 +969,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     padding: 5,
     flexGrow: 0,
+    marginTop: 30,
+    marginBottom: 150,
   },
   selectionGroupContainer: {
     flexDirection: 'column',

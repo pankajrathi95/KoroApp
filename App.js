@@ -1,13 +1,17 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import SurveyCompletedScreen from './src/screens/SurveyCompleteScreen';
 import SurveyScreen from './src/screens/SurveyScreen';
+import Home from './src/Home';
 
 const stackNav = createStackNavigator({
+  Home: {
+    screen: Home,
+  },
   Survey: {
-    screen1: SurveyScreen,
+    screen: SurveyScreen,
   },
   SurveyCompleted: {
-    screen1: SurveyCompletedScreen,
+    screen: SurveyCompletedScreen,
   },
 });
 

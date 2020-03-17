@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Dimensions,
+} from 'react-native';
 
 const GREEN = 'rgba(141,196,63,1)';
 const PURPLE = 'rgba(108,48,237,1)';
@@ -20,7 +27,7 @@ export default class SurveyCompletedScreen extends Component {
       headerTitle: 'Survey Results',
       headerTitleStyle: {
         flex: 1,
-      },,
+      },
     };
   };
 
@@ -29,52 +36,40 @@ export default class SurveyCompletedScreen extends Component {
       'surveyAnswers',
       defaultAnswers,
     );
+    let totalScore = 0;
+    let displayMsg = '';
+    let arr = Object.keys(answers).map(k => answers[k]);
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === 'number') {
+        let val = arr[i] >= 50 ? 1 : 0;
+        totalScore = totalScore + parseInt(val);
+      } else {
+        totalScore = totalScore + parseInt(arr[i].value);
+      }
+    }
+
+    if (totalScore <= 6) {
+      displayMsg = 'You are likely to be Normal!';
+    } else if (totalScore > 7 && totalScore <= 15) {
+      displayMsg =
+        'You must report to your physcian or taken into account of Quarantine!';
+    } else {
+      displayMsg = 'You Must report to physcian and put under Quarantine!';
+    }
 
     return (
       <View style={styles.background}>
         <View style={styles.container}>
           <ScrollView>
-            <Text style={styles.questionText}>The results are in!</Text>
-            <Text style={styles.questionText}>
-              Your favorite color: {answers.favoriteColor}
-            </Text>
-            <Text style={styles.questionText}>
-              Your favorite number: {answers.favoriteNumber}
-            </Text>
-            <Text style={styles.questionText}>
-              You said you can juggle {answers.jugglingBalls} balls at once
-              {answers.jugglingBalls > 1 ? '!' : '.'}
-            </Text>
-            <Text style={styles.questionText}>
-              Your favorite pet: {answers.favoritePet.value}
-            </Text>
-            <Text style={styles.questionText}>
-              Your favorite foods: {answers.favoriteFoods[0].value} and{' '}
-              {answers.favoriteFoods[1].value}
-            </Text>
-            <Text style={styles.questionText}>
-              How you relax: {answers.relax[0].value} and{' '}
-              {answers.relax[1].value}
-            </Text>
-            <Text style={styles.questionText}>
-              When confronted with a radio button you picked:{' '}
-              {answers.radio.value}
-            </Text>
-            <Text style={styles.questionText}>
-              When given a default you chose: the {answers.singleDefault.value}
-            </Text>
-            <Text style={styles.questionText}>
-              When given a multiple defaults you chose: the{' '}
-              {answers.multipleDefaults[0].value} and the{' '}
-              {answers.multipleDefaults[1].value}
-            </Text>
-            <Text>
-              Raw JSON:{' '}
-              {JSON.stringify(
-                this.props.navigation.getParam('surveyAnswers', {}),
-              )}
-            </Text>
+            <Text style={styles.questionText}>{displayMsg}</Text>
           </ScrollView>
+        </View>
+        <View style={styles.button}>
+          <Button
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('Home', {})}
+            title="Go back to Home"
+          />
         </View>
       </View>
     );
@@ -100,7 +95,16 @@ const styles = StyleSheet.create({
   },
   questionText: {
     marginBottom: 20,
-    fontSize: 20,,
+    marginTop: 50,
+    fontSize: 35,
+  },
+  button: {
+    textAlignVertical: 'bottom',
+    justifyContent: 'flex-end',
+    position: 'absolute',
+    bottom: -25,
+    left: Dimensions.get('window').width / 10,
+    marginBottom: 40,
+    width: '80%',
   },
 });
-
