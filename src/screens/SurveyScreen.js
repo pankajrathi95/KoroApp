@@ -10,8 +10,8 @@ import {
 import {SimpleSurvey} from 'react-native-simple-survey';
 import {COLORS} from '../res/ValidColors';
 
-const GREEN = 'rgba(141,196,63,1)';
-const PURPLE = 'rgba(108,48,237,1)';
+const GREEN = '#00537b'; //'rgba(141,196,63,1)';
+const PURPLE = 'rgba(108, 48, 237, 1)';
 
 const survey = [
   /* {
@@ -697,7 +697,8 @@ const survey = [
   },
   {
     questionType: 'Info',
-    questionText: 'That is all for the Survey, tap finish to see your results!',
+    questionText:
+      'Thanks for completing the JBR CORO AI Assessment! Tap on finish to see the results',
   },
 ];
 
@@ -710,7 +711,7 @@ export default class SurveyScreen extends Component {
         elevation: 5,
       },
       headerTintColor: '#fff',
-      headerTitle: 'Sample Survey',
+      headerTitle: 'Coro AI Assessment System',
       headerTitleStyle: {
         flex: 1,
       },
@@ -901,11 +902,7 @@ export default class SurveyScreen extends Component {
 
   render() {
     return (
-      <View
-        style={[
-          styles.background,
-          {backgroundColor: this.state.backgroundColor},
-        ]}>
+      <View style={[styles.background, {backgroundColor: '#fff'}]}>
         <View style={styles.container}>
           <SimpleSurvey
             ref={s => {

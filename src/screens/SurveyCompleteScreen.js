@@ -38,6 +38,7 @@ export default class SurveyCompletedScreen extends Component {
     );
     let totalScore = 0;
     let displayMsg = '';
+    let resultColor = '';
     let arr = Object.keys(answers).map(k => answers[k]);
     for (let i = 0; i < arr.length; i++) {
       if (typeof arr[i] === 'number') {
@@ -50,18 +51,29 @@ export default class SurveyCompletedScreen extends Component {
 
     if (totalScore <= 6) {
       displayMsg = 'You are likely to be Normal!';
+      resultColor = '#0f0';
     } else if (totalScore > 7 && totalScore <= 15) {
       displayMsg =
         'You must report to your physcian or taken into account of Quarantine!';
+      resultColor = '#ff0';
     } else {
       displayMsg = 'You Must report to physcian and put under Quarantine!';
+      resultColor = '#f00';
     }
 
     return (
       <View style={styles.background}>
         <View style={styles.container}>
           <ScrollView>
-            <Text style={styles.questionText}>{displayMsg}</Text>
+            <Text
+              style={{
+                marginBottom: 20,
+                marginTop: 50,
+                fontSize: 35,
+                color: {resultColor},
+              }}>
+              {displayMsg}
+            </Text>
           </ScrollView>
         </View>
         <View style={styles.button}>

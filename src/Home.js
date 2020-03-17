@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {StyleSheet, Button, Text, View, Dimensions} from 'react-native';
 
-const GREEN = 'rgba(141,196,63,1)';
-const PURPLE = 'rgba(108,48,237,1)';
+const GREEN = '#00537b'; //'rgba(141,196,63,1)';
+const PURPLE = '#fff'; //rgba(108,48,237,1)';
 
 export default class Home extends Component {
   static navigationOptions = () => {
     return {
       headerStyle: {
         backgroundColor: GREEN,
-        height: 40,
+        height: 45,
         elevation: 5,
       },
       headerTintColor: '#fff',
-      headerTitle: 'Koro App',
+      headerTitle: 'Coro AI',
       headerTitleStyle: {
         flex: 1,
       },
@@ -28,7 +28,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.Header}>Welcome to the CORO App!</Text>
+        <Text style={styles.Header}>Welcome to the CORO AI App!</Text>
         <Text style={styles.content}>
           This App will help you in finding whether you are infected with corona
           virus or not. You would just need to anwer few questions and then at
@@ -40,6 +40,7 @@ export default class Home extends Component {
         </Text>
         <View style={styles.button}>
           <Button
+            color="#00537b"
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Survey', {})}
             title="Take me In">
