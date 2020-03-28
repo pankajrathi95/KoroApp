@@ -8,8 +8,8 @@ import {
   Dimensions,
 } from 'react-native';
 
-const GREEN = 'rgba(141,196,63,1)';
-const PURPLE = 'rgba(108,48,237,1)';
+const GREEN = '#00537b';
+
 const defaultAnswers = {
   favoriteColor: 'nothing',
   favoriteNumber: '0',
@@ -24,7 +24,7 @@ export default class SurveyCompletedScreen extends Component {
         elevation: 5,
       },
       headerTintColor: '#fff',
-      headerTitle: 'Survey Results',
+      headerTitle: 'Assessment Results',
       headerTitleStyle: {
         flex: 1,
       },
@@ -38,46 +38,71 @@ export default class SurveyCompletedScreen extends Component {
     );
     let totalScore = 0;
     let displayMsg = '';
-    let resultColor = '';
+    let displayMsgWorkplace = '';
     let arr = Object.keys(answers).map(k => answers[k]);
     for (let i = 0; i < arr.length; i++) {
       if (typeof arr[i] === 'number') {
-        let val = arr[i] >= 50 ? 1 : 0;
-        totalScore = totalScore + parseInt(val);
+        if (i === 2) {
+          let val = arr[i] >= 50 ? 1 : 0;
+          totalScore += parseInt(val);
+        } else {
+          let val = arr[i] >= 3 ? 1 : 0;
+          totalScore += parseInt(val);
+        }
       } else {
-        totalScore = totalScore + parseInt(arr[i].value);
+        totalScore += parseInt(arr[i].value);
       }
     }
 
     if (totalScore <= 6) {
-      displayMsg = 'You are likely to be Normal!';
-      resultColor = '#0f0';
-    } else if (totalScore > 7 && totalScore <= 15) {
       displayMsg =
-        'You must report to your physcian or taken into account of Quarantine!';
-      resultColor = '#ff0';
+        'You may or may not be healthy.  Please continue to monitor your health.';
+      displayMsgWorkplace =
+        'You are probably safe to be in the workplace.  Please monitor further for any new symptoms.';
+    } else if (totalScore >= 7 && totalScore <= 15) {
+      displayMsg =
+        'Please contact a healthcare professional remotely via telehealth or phone call.  Please consider self quarantine measures in order to isolate from others.  ';
+      displayMsgWorkplace =
+        'Please contact a health care professional prior to returning to the workplace.';
+    } else if (totalScore >= 16 && totalScore <= 20) {
+      displayMsg =
+        'Please contact a healthcare professional immediately via telehealth or phone call.  Please activate self quarantine measures in order to isolate from others.  ';
+      displayMsgWorkplace =
+        'Please contact a health care professional and discuss a timeline for returning to the workplace.  You should not return to the workplace until you have clearance from a healthcare professional.  ';
     } else {
-      displayMsg = 'You Must report to physcian and put under Quarantine!';
-      resultColor = '#f00';
+      displayMsg =
+        'CONTACT A HEALTHCARE PROFESSIONAL IMMEDIATELY.  Treatment and management must begin as soon as possible.  SELF ISOLATION IS MANDATORY!  Please note that it is likely that you are contagious and will spread to others you come in contact with.  ';
+      displayMsgWorkplace =
+        'YOU MUST NOT GO TO WORK.  Contact a healthcare professional immediately, and do not return to work until you have been treated.';
     }
 
     return (
       <View style={styles.background}>
         <View style={styles.container}>
-          <ScrollView>
+          <ScrollView style={{margin: 10}}>
             <Text
               style={{
                 marginBottom: 20,
                 marginTop: 50,
-                fontSize: 35,
-                color: {resultColor},
+                fontSize: 20,
+                color: '#000',
               }}>
-              {displayMsg}
+              {displayMsg + '\n\n'}
+              <Text
+                style={{
+                  color: '#00537b',
+                  fontWeight: 'bold',
+                  textDecorationLine: 'underline',
+                }}>
+                {'For the workplace:'}{' '}
+              </Text>
+              {'\n\n' + displayMsgWorkplace}
             </Text>
           </ScrollView>
         </View>
         <View style={styles.button}>
           <Button
+            color="#00537b"
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Home', {})}
             title="Go back to Home"
@@ -93,7 +118,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: PURPLE,
+    backgroundColor: 'white',
   },
   container: {
     minWidth: '70%',
@@ -101,8 +126,10 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'center',
     backgroundColor: 'white',
-    elevation: 20,
+    // elevation: 20,
     borderRadius: 10,
+    borderColor: '#00537b',
+    borderWidth: 1,
     maxHeight: '80%',
   },
   questionText: {

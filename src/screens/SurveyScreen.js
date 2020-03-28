@@ -21,13 +21,15 @@ const survey = [
     questionId: 'location',
     placeholderText: '',
   },*/
+  //0
   {
     questionType: 'SelectionGroup',
     questionText:
-      'Location of your house or the place from where you are using this app?',
+      'Where is your home or location from which you are using CORO APP',
     questionId: 'location',
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -135,17 +137,27 @@ const survey = [
         value: '1',
       },
       {
+        optionText: 'India',
+        value: '1',
+      },
+      {
+        optionText: 'Pakistan',
+        value: '2',
+      },
+      {
         optionText: 'Other countries',
         value: '0',
       },
     ],
   },
+  //1
   {
     questionType: 'SelectionGroup',
     questionText: 'Gender                                         ',
     questionId: 'gender',
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -162,18 +174,21 @@ const survey = [
       },
     ],
   },
+  //2
   {
     questionType: 'NumericInput',
     questionText: 'Age                                        ',
     questionId: 'age',
-    placeholderText: 'Ex: 42',
+    placeholderText: 'Ex: 42 Years',
   },
+  //3
   {
     questionType: 'SelectionGroup',
     questionText: 'Race                                 ',
     questionId: 'race',
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -185,7 +200,7 @@ const survey = [
         value: '0',
       },
       {
-        optionText: 'China',
+        optionText: 'Chinese',
         value: '1',
       },
       {
@@ -194,13 +209,15 @@ const survey = [
       },
     ],
   },
+  //4
   {
     questionType: 'SelectionGroup',
     questionText:
-      'Have you travelled or living in any of the COVID-19  the affected areas or countries in last three weeks or 21 days?',
+      'Have you traveled or are living in any of the COVID-19  the affected areas or countries in last 21 days?',
     questionId: 'travelledRecently',
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -308,18 +325,28 @@ const survey = [
         value: '1',
       },
       {
+        optionText: 'India',
+        value: '1',
+      },
+      {
+        optionText: 'Pakistan',
+        value: '2',
+      },
+      {
         optionText: 'Other countries',
         value: '0',
       },
     ],
   },
+  //5
   {
     questionType: 'SelectionGroup',
     questionText:
-      'Have you had any close contact with a person who is known to have COVID-19 during the last 21 days?',
+      'Have you had any close contact with a person known to have COVID-19 during the last 21 days?',
     questionId: 'closeContactIn21Days',
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -332,13 +359,15 @@ const survey = [
       },
     ],
   },
+  //6
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have fever?                    ',
+    questionText: 'Do you think you have fever?',
     questionId: 'fever',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -351,32 +380,23 @@ const survey = [
       },
     ],
   },
+  //7
   {
-    questionType: 'SelectionGroup',
-    questionText: 'Duration of fever in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you had your fever?',
     questionId: 'durationOfFever',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
+  //9
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have Cough?                    ',
+    questionText: 'Do you have a cough?',
     questionId: 'cough',
-
+    // followUpQuestion: true,
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -389,32 +409,22 @@ const survey = [
       },
     ],
   },
+  //10
   {
-    questionType: 'SelectionGroup',
-    questionText: 'Duration of Cough in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you had a cough?',
     questionId: 'durationOfCough',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
+  //11
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have Shortness of breath ?                    ',
+    questionText: 'Do you have shortness of breath?',
     questionId: 'breath',
-
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -427,32 +437,22 @@ const survey = [
       },
     ],
   },
+  //12
   {
-    questionType: 'SelectionGroup',
-    questionText: 'Duration of Shortness of breath in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you had shortness of breath?',
     questionId: 'durationOfBreath',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
+  //13
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you feel fatigue or muscle pain?                ',
+    questionText: 'Do you have fatigue or muscle pain?',
     questionId: 'fatigue',
-
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -465,33 +465,23 @@ const survey = [
       },
     ],
   },
+  //14
   {
-    questionType: 'SelectionGroup',
-    questionText: 'The duration of fatigue or muscle pain in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you had fatigue or muscle pain?',
     questionId: 'durationOfFatigue',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
 
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have suptum problem i.e sputum production          ',
+    questionText: 'Are you coughing up phlegm or mucus?',
     questionId: 'suptum',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -505,31 +495,20 @@ const survey = [
     ],
   },
   {
-    questionType: 'SelectionGroup',
-    questionText: 'The duration of sputum production in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you been coghing up phlegm or mucus?',
     questionId: 'durationOfSuptum',
+    placeholderText: 'Ex: 4 days',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
   },
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you feel Headache?                ',
+    questionText: 'Do you have a headache?',
     questionId: 'headache',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -543,31 +522,20 @@ const survey = [
     ],
   },
   {
-    questionType: 'SelectionGroup',
-    questionText: 'The duration of Headache in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you had a headache?',
     questionId: 'durationOfHeadache',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have diarrhea?               ',
+    questionText: 'Do you or have you recently had diarrhea? ',
     questionId: 'diarrhea',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -581,31 +549,21 @@ const survey = [
     ],
   },
   {
-    questionType: 'SelectionGroup',
-    questionText: 'The duration of diarrhea in days',
+    questionType: 'NumericInput',
+    questionText: 'How long have you, or did you, have diarrhea?',
     questionId: 'durationOfDiarrhea',
     followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
-      },
-    ],
+    placeholderText: 'Ex: 4 days',
   },
   {
     questionType: 'SelectionGroup',
-    questionText: 'Do you have pneumonia in lungs?                ',
-    questionId: 'pneumonia',
+    questionText:
+      'Do  you have any diseases like asthma, hypertension, diabetes, Chronic obstructive lung disease and Coronary heart disease?',
+    questionId: 'anyOtherDisease',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -615,55 +573,58 @@ const survey = [
       {
         optionText: 'No',
         value: '0',
-      },
-    ],
-  },
-  {
-    questionType: 'SelectionGroup',
-    questionText: 'The duration of pneumonia in days',
-    questionId: 'durationOfPneumonia',
-    followUpQuestion: true,
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Less than 3 days',
-        value: '0',
-      },
-      {
-        optionText: 'More than 3 days',
-        value: '1',
       },
     ],
   },
   {
     questionType: 'SelectionGroup',
     questionText:
-      'Do you have any diseases like hypertension, diabetes, Chronic obstructive lung disease and Coronary heart disease?',
-    questionId: 'anyOtherDisease',
-
-    questionSettings: {
-      allowDeselect: false,
-    },
-    options: [
-      {
-        optionText: 'Yes',
-        value: '1',
-      },
-      {
-        optionText: 'No',
-        value: '0',
-      },
-    ],
-  },
-  {
-    questionType: 'SelectionGroup',
-    questionText: 'Are you able to do any Physical work?      ',
+      'Do you have a decrease in energy when doing physical activity?',
     questionId: 'phyWork',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '0',
+      },
+      {
+        optionText: 'No',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Do you find it difficult to focus on daily tasks? ',
+    questionId: 'focus',
+
+    questionSettings: {
+      allowDeselect: false,
+      autoAdvance: true,
+    },
+    options: [
+      {
+        optionText: 'Yes',
+        value: '0',
+      },
+      {
+        optionText: 'No',
+        value: '1',
+      },
+    ],
+  },
+  {
+    questionType: 'SelectionGroup',
+    questionText: 'Have you had a loss or altered sense of smell? ',
+    questionId: 'smell',
+
+    questionSettings: {
+      allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -678,11 +639,12 @@ const survey = [
   },
   {
     questionType: 'SelectionGroup',
-    questionText: 'Can you focus on the work or task?          ',
+    questionText: 'Have you had a loss or altered sense of taste? ',
     questionId: 'focus',
 
     questionSettings: {
       allowDeselect: false,
+      autoAdvance: true,
     },
     options: [
       {
@@ -698,7 +660,7 @@ const survey = [
   {
     questionType: 'Info',
     questionText:
-      'Thanks for completing the JBR CORO AI Assessment! Tap on finish to see the results',
+      'Thanks for completing the Assessment! Tap on finish to see the results',
   },
 ];
 
@@ -903,30 +865,30 @@ export default class SurveyScreen extends Component {
   render() {
     return (
       <View style={[styles.background, {backgroundColor: '#fff'}]}>
-        <View style={styles.container}>
-          <SimpleSurvey
-            ref={s => {
-              this.surveyRef = s;
-            }}
-            survey={survey}
-            renderSelector={this.renderButton.bind(this)}
-            containerStyle={styles.surveyContainer}
-            selectionGroupContainerStyle={styles.selectionGroupContainer}
-            navButtonContainerStyle={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-            }}
-            renderPrevious={this.renderPreviousButton.bind(this)}
-            renderNext={this.renderNextButton.bind(this)}
-            renderFinished={this.renderFinishedButton.bind(this)}
-            renderQuestionText={this.renderQuestionText}
-            onSurveyFinished={answers => this.onSurveyFinished(answers)}
-            onAnswerSubmitted={answer => this.onAnswerSubmitted(answer)}
-            renderTextInput={this.renderTextBox}
-            renderNumericInput={this.renderNumericInput}
-            renderInfo={this.renderInfoText}
-          />
-        </View>
+        {/* <View style={styles.container}> */}
+        <SimpleSurvey
+          ref={s => {
+            this.surveyRef = s;
+          }}
+          survey={survey}
+          renderSelector={this.renderButton.bind(this)}
+          containerStyle={styles.surveyContainer}
+          selectionGroupContainerStyle={styles.selectionGroupContainer}
+          navButtonContainerStyle={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+          }}
+          renderPrevious={this.renderPreviousButton.bind(this)}
+          renderNext={this.renderNextButton.bind(this)}
+          renderFinished={this.renderFinishedButton.bind(this)}
+          renderQuestionText={this.renderQuestionText}
+          onSurveyFinished={answers => this.onSurveyFinished(answers)}
+          onAnswerSubmitted={answer => this.onAnswerSubmitted(answer)}
+          renderTextInput={this.renderTextBox}
+          renderNumericInput={this.renderNumericInput}
+          renderInfo={this.renderInfoText}
+        />
+        {/* </View> */}
       </View>
     );
   }
@@ -967,7 +929,7 @@ const styles = StyleSheet.create({
     padding: 5,
     flexGrow: 0,
     marginTop: 30,
-    marginBottom: 150,
+    marginBottom: 200,
   },
   selectionGroupContainer: {
     flexDirection: 'column',
@@ -980,6 +942,7 @@ const styles = StyleSheet.create({
     maxHeight: 800,
     justifyContent: 'center',
     alignItems: 'center',
+    textAlignVertical: 'center',
   },
   questionText: {
     marginBottom: 20,

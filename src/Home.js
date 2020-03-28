@@ -29,21 +29,32 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.Header}>Welcome to the CORO AI App!</Text>
-        <Text style={styles.content}>
-          This App will help you in finding whether you are infected with corona
-          virus or not. You would just need to anwer few questions and then at
-          the end the App would give you if you are a potential COVID-19
-          suffered patient or not.
-        </Text>
-        <Text style={styles.content}>
-          Click on the below button to start the survey.
-        </Text>
+        <View style={[styles.background, {backgroundColor: '#fff'}]}>
+          <Text style={{fontSize: 18}}>
+            This APP is designed to help slow the spread of infectious diseases
+            such as Coronavirus (COVID19) via potential quarantine and
+            recommended communication with healthcare professionals.
+            {'\n\n'} The technology and algorithm is a collaboration between a
+            group group of scientists, clinicians, biotech engineers, software
+            developers, and AI data analysts. It will be useful for research and
+            awareness regarding Coronavirus (COVID19). {'\n\n'}This APP is NOT
+            designed to be a diagnostic.
+          </Text>
+        </View>
+        <View style={styles.button1}>
+          <Button
+            color="#00537b"
+            style={styles.button1}
+            onPress={() => this.props.navigation.navigate('Safety', {})}
+            title="Safety Tips"
+          />
+        </View>
         <View style={styles.button}>
           <Button
             color="#00537b"
             style={styles.button}
             onPress={() => this.props.navigation.navigate('Survey', {})}
-            title="Take me In">
+            title="My self Assessment">
             Take me In
           </Button>
         </View>
@@ -53,6 +64,17 @@ export default class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    // minHeight: 800,
+    //maxHeight: 800,
+    //justifyContent: 'space-evenly',
+    //alignItems: 'center',
+    textAlign: 'auto',
+    //  textAlignVertical: 'center',
+    margin: 10,
+    marginTop: -10,
+  },
   container: {
     //  minWidth: '100%',
     // maxWidth: '100%',
@@ -62,6 +84,7 @@ const styles = StyleSheet.create({
     // elevation: 20,
     borderRadius: 10,
     flex: 1,
+    margin: 10,
     // margin: 15,
     backgroundColor: PURPLE,
     //  minHeight: 800,
@@ -86,7 +109,18 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: Dimensions.get('window').width / 10,
+
     marginBottom: 40,
+    width: '80%',
+  },
+  button1: {
+    //textAlignVertical: 'bottom',
+    justifyContent: 'flex-end',
+    position: 'absolute',
+    bottom: 0,
+    left: Dimensions.get('window').width / 10,
+    //  marginTop: 40,
+    marginBottom: 85,
     width: '80%',
   },
 });
