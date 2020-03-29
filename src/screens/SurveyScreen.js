@@ -14,13 +14,6 @@ const GREEN = '#00537b'; //'rgba(141,196,63,1)';
 const PURPLE = 'rgba(108, 48, 237, 1)';
 
 const survey = [
-  /* {
-    questionType: 'TextInput',
-    questionText:
-      'Location of your house or the place from where you are using this app?',
-    questionId: 'location',
-    placeholderText: '',
-  },*/
   //0
   {
     questionType: 'SelectionGroup',
@@ -929,7 +922,7 @@ const styles = StyleSheet.create({
     padding: 5,
     flexGrow: 0,
     marginTop: 30,
-    marginBottom: 200,
+    marginBottom: 150,
   },
   selectionGroupContainer: {
     flexDirection: 'column',
@@ -937,7 +930,7 @@ const styles = StyleSheet.create({
     alignContent: 'flex-end',
   },
   background: {
-    flex: 1,
+   flex: 1,
     minHeight: 800,
     maxHeight: 800,
     justifyContent: 'center',
