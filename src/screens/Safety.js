@@ -21,7 +21,7 @@ export default class SafetyScreen extends Component {
         height: 40,
         elevation: 5,
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#ffffff',
       headerTitle: 'Safety Tips',
       headerTitleStyle: {
         flex: 1,
