@@ -1,5 +1,5 @@
 # KoroApp
 
-git clone <url>
+git clone <https://github.com>
 
 yarn install 
