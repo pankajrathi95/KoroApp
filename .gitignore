@@ -34,6 +34,9 @@ local.properties
 !node_modules/
 
 node_modules/*
+!node_modules/react-native-simple-survey/
+
+node_modules/react-native-simple-survey/*
 !node_modules/react-native-simple-survey/index.js
 
 #till here
